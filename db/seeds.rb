@@ -13,13 +13,13 @@ Recipe.destroy_all
 # user seeds
 User.create(username: 'LandonT789', password: 'hello', about: 'UK -> Columbia. COFFEEE is LIFE', image: 'https://images.unsplash.com/photo-1487309078313-fad80c3ec1e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80')
 
-User.create(username: 'Byunski88', password: 'hello', about: 'Skiing, Coffee, Puppies. In that order', image: 'https://media.licdn.com/dms/image/C5103AQGn4AilTiLyJQ/profile-displayphoto-shrink_800_800/0?e=1574294400&v=beta&t=cj4CalA0bDQ_m03p7Aws9HnYZK4MHiyr6CIMXvtYZUM')
+User.create(username: 'Byunski88', password: 'hello', about: 'Skiing, Coffee, Puppies. In that order', image:'https://media.licdn.com/dms/image/C5103AQGn4AilTiLyJQ/profile-displayphoto-shrink_800_800/0?e=1574294400&v=beta&t=cj4CalA0bDQ_m03p7Aws9HnYZK4MHiyr6CIMXvtYZUM')
 
 User.create(username: 'Mal1015', password: 'hello', about: 'I like to brew coffee mostly on Sundays' , image: 'https://yt3.ggpht.com/a/AGF-l79hYQ9eWf4jldmJ2bG04bvEkSJQfGCrLxEOfA=s900-c-k-c0xffffffff-no-rj-mo',)
 
-User.create(username: 'StellaMae17', password: 'hello', about: 'Pizza, Coffee, Park' , image: 'https://images.unsplash.com/photo-1549109265-2e1df6bd2d49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=562&q=80')
+User.create(username: 'StellaMae17', password: 'hello', about: 'Pizza, Coffee, Park' , image:'https://images.unsplash.com/photo-1549109265-2e1df6bd2d49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=562&q=80')
 
-User.create(username: 'Peis&Coffee02', password: 'hello', about: 'Pineappples definitely on pizza, would try coffee at least... everytime?' , image: 'https://images.unsplash.com/photo-1522039824777-f813e0c1448f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80')
+User.create(username: 'Peis&Coffee02', password: 'hello', about: 'Pineappples definitely on pizza, would try coffee at least... everytime?' , image:'https://images.unsplash.com/photo-1522039824777-f813e0c1448f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=633&q=80')
 
 # recipe seeds
 
