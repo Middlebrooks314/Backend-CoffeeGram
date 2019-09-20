@@ -28,11 +28,11 @@ class Api::V1::RecipesController < ApplicationController
   
     private
     def recipe_params
-      params.permit(:body, :title, :user_id)
+      params.permit(:title, :method, :coffee, :water, :watertemp, :grindsize, :time, :instructions, :image, :user_id)
     end
   
     def set_recipe
-      @note = Note.find(params[:id])
+      @recipe = Recipe.find(params[:id])
     end
   end
   
