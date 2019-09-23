@@ -11,9 +11,6 @@ class Api::V1::UsersController < ApplicationController
         if user.save 
             render json: user.to_json(except: [:created_at , :updated_at])
 
-        elsif user.username == ''
-            render json: {error: 'Please Enter a Username'}
-
         else
             render json: {error: 'Username already exists, please choose another'}
         end 
@@ -27,7 +24,7 @@ class Api::V1::UsersController < ApplicationController
     def destroy
       userId = @user.id
       @user.destroy
-      render json: {message:"Zap! user deleted", userId:userId}
+      render json: {message:"User deleted", userId:userId}
     end
 
     def show
@@ -44,3 +41,6 @@ class Api::V1::UsersController < ApplicationController
       @user = User.find(params[:id])
     end
   end
+
+
+  
