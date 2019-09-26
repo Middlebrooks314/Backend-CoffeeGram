@@ -3,8 +3,7 @@ class Api::V1::RecipesController < ApplicationController
   
     def index
       recipes = Recipe.all
-      render json: recipes, include: [:user], status: 200
-      # active model serializer => attributes 
+      render json: recipes, include: [:user ], status: 200
     end
   
     def create
@@ -25,7 +24,7 @@ class Api::V1::RecipesController < ApplicationController
   
     def show
       render json: @recipe.as_json(methods: [:username]), status: 200
-      # render json: @recipe, status: 200
+      render json: @recipe, status: 200
 
     end
   
