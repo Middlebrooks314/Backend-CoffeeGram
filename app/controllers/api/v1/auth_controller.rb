@@ -13,6 +13,17 @@ class Api::V1::AuthController < ApplicationController
     end
   end
  
+  def show
+    # Takes the token through an Authorization header and parse into the logged_in? method on the application controller
+    if logged_in?
+      # current_user
+      render json: {user: current_user}, status: :accepted
+    else
+      render json: {error: 'Invalid Token'}, status: :unauthorized
+    end
+
+  end
+
   private
  
   def user_login_params

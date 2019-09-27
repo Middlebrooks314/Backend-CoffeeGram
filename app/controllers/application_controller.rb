@@ -9,6 +9,7 @@ class ApplicationController < ActionController::API
    
     def auth_header
       # { 'Authorization': 'Bearer <token>' }
+      p '**************HITAUTH HEADER**************'
       request.headers['Authorization']
     end
    
@@ -37,11 +38,13 @@ class ApplicationController < ActionController::API
       def logged_in?
         !!current_user
       end
+    
+    
+    
+    def authorized
+        render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
+      end
     end
-    # def authorized
-    #     render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
-    #   end
-    # end
 
 # corresponding fetch that goes with the auth/ztoken 
 

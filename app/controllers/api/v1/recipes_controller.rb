@@ -23,7 +23,7 @@ class Api::V1::RecipesController < ApplicationController
     end
   
     def show
-      render json: @recipe.as_json(methods: [:username]), status: 200
+      # render json: @recipe.as_json(methods: [:username]), status: 200
       render json: @recipe, status: 200
 
     end
