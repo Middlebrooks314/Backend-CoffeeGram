@@ -6,7 +6,7 @@ class Api::V1::UsersController < ApplicationController
 
     def profile
       # binding.pry
-      render json: { user: UserSerializer.new(current_user) }, status: :accepted
+      render json: { user: UserSerializer.new(current_user)},include: [:user ], status: :accepted
     end
 
     def index
@@ -38,7 +38,13 @@ class Api::V1::UsersController < ApplicationController
     def show
       render json: @user, status: 200
     end
+
+    def show 
+      user = User.find_by(id: params[:id])
+      render json: user.to_json(include: [:recipes])
+    end 
   
+    
     private
     
     def user_params 
