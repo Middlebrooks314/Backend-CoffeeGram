@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :favorites
   namespace :api do
     namespace :v1 do
       resources :users
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
       get '/profile', to: 'users#profile'
       get '/users/recipes/:id', to: 'users#show'
       resources :recipes
+      resources :favorites, only: [:create, :destroy]
       end
     end
   end

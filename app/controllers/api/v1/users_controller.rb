@@ -6,7 +6,8 @@ class Api::V1::UsersController < ApplicationController
 
     def profile
       # binding.pry
-      render json: { user: UserSerializer.new(current_user)},include: [:user ], status: :accepted
+      render json: { user: UserSerializer.new(current_user)}, status: :accepted
+      # {, favorites: current_user.favorites} was next to current_user
     end
 
     def index
@@ -35,9 +36,9 @@ class Api::V1::UsersController < ApplicationController
       render json: {message:"User deleted", userId:userId}
     end
 
-    def show
-      render json: @user, status: 200
-    end
+    # def show
+    #   render json: @user, status: 200
+    # end
 
     def show 
       user = User.find_by(id: params[:id])
