@@ -6,7 +6,14 @@ class Api::V1::UsersController < ApplicationController
 
     def profile
       # binding.pry
-      render json: { user: UserSerializer.new(current_user)}, status: :accepted
+      p current_user
+      p "==================================================="
+      if current_user
+        render json: { user: UserSerializer.new(current_user)}, status: :accepted
+      else 
+        render json: { message: 'invalid token'}
+      end
+
       # {, favorites: current_user.favorites} was next to current_user
     end
 
@@ -21,7 +28,7 @@ class Api::V1::UsersController < ApplicationController
         @token = encode_token(user_id: @user.id)
         render json: { user: UserSerializer.new(@user), jwt: @token }, status: :created
       else
-        render json: { error: 'failed to create user' }, status: :not_acceptable
+        render json: { message: 'Username exists, please choose a different one' }, status: :not_acceptable
       end
     end
 
