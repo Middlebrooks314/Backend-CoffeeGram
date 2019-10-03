@@ -12,6 +12,8 @@ class Api::V1::FavoritesController < ApplicationController
         end
       
         def destroy
+            p '******************DELETE FAV*************'
+          favorite = Favorite.find_by(id: params[:id])
           favorite.destroy
           render json: {message: "Unfavorited"}
         end
